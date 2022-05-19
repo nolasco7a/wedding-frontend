@@ -1,0 +1,39 @@
+.invitation {
+    height: auto;
+    align-items: center;
+    //position: sticky;
+    .title-invitation {
+        text-align: center;
+        font-family: $font-3;
+        font-size: 1.5rem;
+        padding: 3rem 2rem;
+        font-weight: 600;
+    }
+    .husband-name,
+    .wife-name {
+        font-family: $font-4;
+        font-size: 2rem;
+    }
+    .husband-lastname,
+    .wife-lastname {
+        font-family: $font-3;
+        letter-spacing: 3px;
+        font-size: 1.5rem;
+    }
+    .middle-names {
+        font-family: $font-1;
+        font-size: 2rem;
+    }
+    .anounce {
+        width: 40%;
+        text-align: left;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        line-height: 18px;
+        height: 50%;
+        margin-top: 25%;
+    }
+    .wedding-info {
+        font-family: $font-4;
+    }
+}

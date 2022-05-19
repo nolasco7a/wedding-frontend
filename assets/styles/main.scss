@@ -1,0 +1,21 @@
+//Google Fonst
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=Mea+Culpa&family=Mulish:wght@200;400;600&family=Playball&display=swap');
+//Fonst variables
+$font-1: 'Mea Culpa';
+$font-2: 'Mulish';
+$font-3: 'Cormorant Garamond';
+$font-4: 'Playball';
+$bg-color-1:#f7e9e8;
+$bg-color-2:#fafafa;
+//global styles
+@import 'global';
+@import 'buttons';
+@import 'sidenav';
+//section styles
+@import 'homeSection.scss';
+@import 'invitationSection.scss';
+@import 'registrySection.scss';
+//General styles
+body {
+    margin: 0;
+}

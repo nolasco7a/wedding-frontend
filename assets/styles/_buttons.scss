@@ -1,0 +1,16 @@
+.gradient-1 {
+    background: rgb(238, 174, 202);
+    background-image: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(110, 147, 190, 1) 100%);
+    text-transform: uppercase;
+    color: white;
+    transition: all 1s linear;
+}
+
+.btn-1 {
+    border: none;
+    border-radius: 50px;
+    padding: .6rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
