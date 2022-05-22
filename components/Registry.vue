@@ -40,10 +40,16 @@
     </section>
 </template>
 <script>
+import { mapState } from 'vuex'
   export default {
     name: 'Registry',
     data: () => ({
       sheet: false,
     }),
+    computed: {
+      ...mapState({
+        giftList: state => state.giftList,
+      })
+    },
   }
 </script>

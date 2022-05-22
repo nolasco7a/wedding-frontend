@@ -20,7 +20,7 @@
         </v-row>
         <v-row justify="center" align="center">
             <v-col lg="8" md="10" sm="12" xs="12">
-                <Slider/>
+                <Slider :data="sliderData"/>
             </v-col>    
         </v-row>
         <v-row>
@@ -49,16 +49,17 @@
     </section>
 </template>
 <script>
+import { mapState } from 'vuex'
 import Slider from './Slider'
 export default {
     name: 'Invitation',
     components: {
         Slider
     },
-    data() {
-        return {
-            
-        }
+    computed: {
+        ...mapState({
+        sliderData: state => state.sliderData,
+        })
     },
 
 }

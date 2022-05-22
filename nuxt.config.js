@@ -1,6 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+    env: {
+        imageURL: process.env.IMAGE_URL || 'http://wedding.test/storage/'
+    },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         titleTemplate: '%s - wedding',
@@ -23,7 +26,9 @@ export default {
     css: [],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [
+        { src: '~/plugins/vee-validate.js', ssr: true },
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -43,7 +48,13 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+
+        //dev API
         baseURL: 'http://wedding.test/api/',
+
+        //productive API
+        //baseURL: 'http://wedding.test/api/',
+
     },
 
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -66,5 +77,7 @@ export default {
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {
+        transpile: ['vee-validate']
+    }
 }
