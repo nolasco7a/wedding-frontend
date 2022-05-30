@@ -1,0 +1,5 @@
+<template>
+    <div class="loader">
+        <img src="@/assets/images/loader.gif"/>
+    </div>
+</template>
