@@ -20,29 +20,43 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        .title-1 {
-            font-size: 2rem;
-            color: grey;
-            height: 30%;
-            text-transform: uppercase;
-            font-family: $font-2;
-            letter-spacing: 1rem;
-            font-weight: 600;
-        }
-        .title-2 {
-            font-size: 5rem;
-            color: currentColor;
-            height: 30%;
-            font-family: $font-1;
-            font-weight: 500;
-            word-spacing: 1rem;
-        }
-        .title-3 {
-            font-size: 2rem;
-            color: grey !important;
-            height: 30%;
-            font-family: $font-3;
-            color: #f7e9e8;
-        }
+
+
     }
+}
+.title-1 {
+  font-size: 2rem;
+  color: grey;
+  height: 30%;
+  text-transform: uppercase;
+  font-family: $font-2;
+  letter-spacing: 1rem;
+  font-weight: 600;
+}
+.title-2 {
+  font-size: 5rem;
+  color: currentColor;
+  height: 30%;
+  font-family: $font-1;
+  font-weight: 500;
+  word-spacing: 1rem;
+}
+.title-3 {
+  font-size: 2rem;
+  color: grey !important;
+  height: 30%;
+  font-family: $font-3;
+  color: #f7e9e8;
+}
+.title-wedding{
+  font-family: $font-2;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 600;
+  padding: 0 0 20px 0;
+}
+.title-wedding-2{
+  font-family: $font-1;
+  font-size: 1.8rem;
+  padding: 0 0 20px 0;
 }

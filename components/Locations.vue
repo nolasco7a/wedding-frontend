@@ -1,9 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold text-h2 basil--text">
-        BASiL
-      </h1>
+      <div class="title-1 title-registry">UBICACIONES</div>
     </v-card-title>
 
     <v-tabs
@@ -14,23 +12,29 @@
     >
       <v-tab
         v-for="item in items"
-        :key="item"
+        :key="item.name"
       >
-        {{ item }}
+        {{ item.name }}
       </v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="item in items"
-        :key="item"
+        :key="item.name"
       >
-        <v-card
-          color="basil"
-          flat
-        >
-          <v-card-text>{{ text }}</v-card-text>
-        </v-card>
+        <div id="map-wrap" style="height: 70vh">
+          <no-ssr>
+            <l-map :zoom="16" :center="item.positionMarker">
+              <l-tile-layer
+                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+              ></l-tile-layer>
+              <l-marker :lat-lng="item.positionMarker">
+                <l-popup>{{item.textMarker}} <br></a><a :href="item.googleMap">Abrir en google maps</a></l-popup>
+              </l-marker>
+            </l-map>
+          </no-ssr>
+        </div>
       </v-tab-item>
     </v-tabs-items>
   </v-card>
@@ -42,9 +46,20 @@
       return {
         tab: null,
         items: [
-          'Appetizers', 'Entrees', 'Deserts', 'Cocktails',
+          {
+            name:'Ceremonia Religiosa',
+            positionMarker: [15.545533498146867, -88.01444540193137],
+            textMarker: 'Parroquia La Santa Cruz Col. Tara, San Pedro Sula',
+            googleMap: 'https://goo.gl/maps/AJvjidPZN94TujdQ6'
+          },
+          {
+            name: 'Ceremonia Civil', 
+            positionMarker:[15.4843401382507, -88.04344793087607],
+            textMarker: 'Salón Las Poinsettias Angelis Garden, Col. Altiplano, San Pedro Sula',
+            googleMap: 'https://goo.gl/maps/tdyNsJiTks8MVEwR9'
+          }
+          , 
         ],
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       }
     },
   }
@@ -52,9 +67,6 @@
 <style>
 /* Helper classes */
 .basil {
-  background-color: #FFFBE6 !important;
-}
-.basil--text {
-  color: #356859 !important;
+  background-color: #f7e8e7 !important;
 }
 </style>

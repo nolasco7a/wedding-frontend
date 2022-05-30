@@ -1,9 +1,10 @@
 .gradient-1 {
-    background: rgb(238, 174, 202);
-    background-image: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(110, 147, 190, 1) 100%);
+    background: rgb(196,148,208);
+    background: linear-gradient(140deg, rgba(196,148,208,1) 0%, rgba(240,212,197,1) 48%, rgba(196,148,208,1) 100%);
     text-transform: uppercase;
-    color: white;
+    color: black;
     transition: all 1s linear;
+    font-family: $font-2;
 }
 
 .btn-1 {
@@ -13,4 +14,13 @@
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 5px;
+}
+
+.btn-large{
+  border: none;
+  border-radius: 50px;
+  padding: 1.5rem 2rem !important;
+  font-size: 1.6rem !important;
+  font-weight: 600;
+  letter-spacing: 5px;
 }

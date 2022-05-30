@@ -34,7 +34,7 @@
 }
 
 .loader{
-        height: 100vh;
+        height: 110vh;
         width: 100vw;
         display: flex;
         align-items: center;
@@ -42,4 +42,22 @@
         z-index: 3;
         position: fixed;
         background-color: white;
-    }
+
+  img{
+        max-height: 300px;
+        max-width: 300px;
+      }
+}
+
+.font-1 {
+    font-family: $font-1;
+}
+.font-2{
+    font-family: $font-2;
+}
+.font-3{
+    font-family: $font-3;
+}
+.font-4{
+    font-family: $font-4;
+}

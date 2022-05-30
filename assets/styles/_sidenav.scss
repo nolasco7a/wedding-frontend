@@ -1,22 +1,12 @@
-.sidenav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 2.5rem;
-    z-index: 2;
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        li {
-            font-family: $font-3;
-            cursor: pointer;
-            display: block;
-            padding: .7rem;
-            font-size: .8rem;
-            &:hover {
-                background: #f5f5f5;
-            }
+.app-bar{
+    background-color: #D81B60!important ;
+    color: #fff;
+    z-index: 99999999 !important;
+    a{
+        text-decoration: none;
+        color: #fff;
+        &:hover{
+            color: rgb(181, 176, 176);
         }
     }
 }

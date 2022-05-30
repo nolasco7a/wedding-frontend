@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
     env: {
-        imageURL: process.env.IMAGE_URL || 'http://wedding.test/storage/'
+        imageURL: process.env.IMAGE_URL || 'http://143.244.172.58/storage/'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -18,7 +18,8 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            {rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'},
         ]
     },
 
@@ -28,6 +29,8 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '~/plugins/vee-validate.js', ssr: true },
+        { src: '~/plugins/vue-carousel.js', mode: 'client' },
+        { src: '~/plugins/nuxt-leaflet.js', mode: 'client'},
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components

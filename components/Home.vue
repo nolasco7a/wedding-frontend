@@ -1,6 +1,6 @@
 <template>
     <section class="home" v-if="home_data">
-        <img :src="`http://wedding.test/storage/${home_data.background_image}`" class="bg-image" alt="">
+        <img :src="correctUrl(home_data.background_image)" class="bg-image" alt="">
         <div class="home-text">
             <div class="title-1">{{ home_data.title_1 }}</div>
             <div class="title-2">{{ home_data.title_2 }}</div>
@@ -23,6 +23,13 @@ export default ({
     name: 'Home',
     components: {
         Rsvp
+    },
+    methods: {
+        correctUrl(url) {
+            if (url) {
+                return `${process.env.imageURL}${url}`
+            }
+        }
     },
     computed: {
     ...mapState({

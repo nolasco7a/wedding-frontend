@@ -1,6 +1,7 @@
 .invitation {
     height: auto;
     align-items: center;
+
     //position: sticky;
     .title-invitation {
         text-align: center;
@@ -8,6 +9,10 @@
         font-size: 1.5rem;
         padding: 3rem 2rem;
         font-weight: 600;
+    }
+    .title-invitation-2{
+      color: rgb(225, 197, 193);
+      font-size: 1.4rem;
     }
     .husband-name,
     .wife-name {
@@ -36,4 +41,54 @@
     .wedding-info {
         font-family: $font-4;
     }
+  .part-1{
+    background-color: #f7e8e7;
+    padding-bottom: 8%;
+  }
+  .part-2{
+    background-color: #fafafa;
+    padding-top: 25%;
+    padding-bottom: 3rem;
+  }
+  .middle-part{
+    position: relative;
+    margin-bottom: -23%;
+  }
+  a{
+    text-decoration: none;
+    color: grey;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.registry{
+  padding-bottom: 8%;
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.title-registry{
+  padding: 3rem;
+}
+.p-registry{
+  max-width: 60%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: $font-4;
+  font-size: 1.4rem;
+  color: #356859;
+}
+.font-4{
+  font-family: $font-4;
+  color: darkslategrey;
+  font-size: 1.4rem;
+}
+.carousel-element{
+  margin: 0 .2rem;
+}
+.VueCarousel-slide{
+  display: flex !important;
+  justify-content: center !important;
 }
