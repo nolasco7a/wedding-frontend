@@ -30,7 +30,7 @@
                 url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
               <l-marker :lat-lng="item.positionMarker">
-                <l-popup>{{item.textMarker}} <br></a><a :href="item.googleMap">Abrir en google maps</a></l-popup>
+                <l-popup>{{item.textMarker}} <br><a :href="item.googleMap" target="_blanck">Abrir en google maps</a></l-popup>
               </l-marker>
             </l-map>
           </no-ssr>

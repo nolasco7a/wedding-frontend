@@ -33,7 +33,6 @@ export default {
       { title: "Bride Squad", hash: "#bride-squad" },
       { title: "Grooms Squad", hash: "#grooms-squad" },
       { title: "Locations", hash: "#locations" },
-      { title: "Suggest", hash: "#suggest" },
     ],
   }),
 };

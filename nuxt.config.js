@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
     env: {
-        imageURL: process.env.IMAGE_URL || 'http://143.244.172.58/storage/'
+        imageURL: process.env.IMAGE_URL || 'http://lopezchavezwedding.website/storage/'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -53,7 +53,7 @@ export default {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
 
         //dev API
-        baseURL: process.env.IMAGE_URL || 'http://143.244.172.58/api/'
+        baseURL: process.env.IMAGE_URL || 'http://lopezchavezwedding.website/api/'
 
         //productive API
         //baseURL: 'http://wedding.test/api/',

@@ -1,24 +1,25 @@
 <template>
-    <div>
+    <div v-if="groom_squad != null">
         <h1 class="font-3" style="text-align: center">Groom Squad</h1>
         <v-row>
-            <div v-for="(item, index) in items" :key="index">
-                <CardSquad :overlay="item.overlay" :classCard="item.classCard" :name="item.name" :imageCard="item.imageCard"/>
+            <div v-for="(item, index) in groom_squad" :key="index">
+                <CardSquad :overlay="true" classCard="groom-squad" :name="item.name" :imageCard="item.image"/>
             </div>
         </v-row>
     </div>
 </template>
 <script>
 import CardSquad from '@/components/CardSquad'
+import { mapState } from 'vuex'
 export default{
     components: { CardSquad },
     data() {
-        return {
-            items:[
-                {overlay: false, name: "Groom-squad", imageCard: "../assets/images/groom-squad.jpg", classCard: "groom-squad"},
-                {overlay: true, name: "Allan Nolasco" , imageCard: "../assets/images/groom-squad.jpg", classCard: "groom-squad"},
-            ]
-        };
+        return {};
     },
+    computed: {
+    ...mapState({
+      groom_squad: state => state.groomSquad,
+    })
+  },
 }
 </script>

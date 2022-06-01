@@ -4,4 +4,6 @@ export default() => ({
   homeData: null,
   sliderData: null,
   giftList:null,
+  brideSquad: null,
+  groomSquad: null,
 })

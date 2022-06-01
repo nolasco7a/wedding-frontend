@@ -27,6 +27,8 @@ export default {
         this.$store.dispatch("getHomeData");
         this.$store.dispatch("getSliderData");
         this.$store.dispatch("getGifts");
+        this.$store.dispatch("getBrideSquad");
+        this.$store.dispatch("getGroomSquad");
     },
     mounted() {
         this.$nextTick(() => {

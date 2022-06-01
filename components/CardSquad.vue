@@ -1,6 +1,6 @@
 <template>
     <div :class="classCard">
-        <img :src="imageCard" alt="">
+        <img :src="correctUrl(imageCard)" alt="">
         <div v-if="overlay" class="overlay-card">
             <h1>{{ name }}</h1>
         </div>
@@ -28,9 +28,14 @@
             }
         },
         data() {
-            return {
-               
-            };
+            return {};
         },
+        methods: {
+        correctUrl(url) {
+            if (url) {
+                return `${process.env.imageURL}${url}`
+            }
+        }
+    },
     };
 </script>

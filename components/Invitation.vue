@@ -42,13 +42,13 @@
               <p>Fecha: Sábado, Ago 06, 2022</p>
               <p>Hora: 03:00 pm</p>
               <p>Lugar: Parroquia La Santa Cruz Col. Tara, San Pedro Sula</p>
-              <a href="">View map</a>
+              <a href="#locations">View map</a>
 
               <h4 class="title-invitation-2 mt-4">Ceremonia Civil y Recepcion</h4>
               <p>Fecha: Sábado, Ago 06, 2022</p>
               <p>Hora: 05:00 pm</p>
               <p>Lugar: Salón Las Poinsettias Angelis Garden, Col. Altiplano, SPS</p>
-              <a href="">View map</a>
+              <a href="#locations">View map</a>
             </v-col>
           </v-row>
         </div>

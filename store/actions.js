@@ -46,4 +46,26 @@ export default {
       console.log(error)
     }
   },
+  async getBrideSquad({ commit }){
+    try {
+      let response = await this.$axios('/bride_squad')
+      commit("storeState",{
+        key: "brideSquad",
+        value: response.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  async getGroomSquad({ commit }){
+    try {
+      let response = await this.$axios('/groom_squad')
+      commit("storeState",{
+        key: "groomSquad",
+        value: response.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
