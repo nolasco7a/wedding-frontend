@@ -6,8 +6,7 @@
         fixed
         color="pink darken-2"
         dark
-        height="50px"
-        width="100px"
+        class="wrapper-app-bar"
       >
         <v-app-bar-nav-icon v-bind="attrs" v-on="on"> </v-app-bar-nav-icon>
       </v-app-bar>

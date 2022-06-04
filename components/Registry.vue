@@ -4,10 +4,10 @@
       <v-row>
         <v-col cols="lg-12" align="center">
           <div class="title-1 title-registry">registrate</div>
-          <p class="p-registry">Acompañanos en este gran momento, si aun no te has registrado, a continuacion encontraras un botton para que puedas hacer tu registro y confrimación a la fiesta, gracias a la verga.</p>
+          <p class="p-registry">{{textResgistration}}</p>
           <!-- modal -->
           <Rsvp
-            :textButton="REGISTRATE"
+            textButton="RSVP"
             :rounded="true"
             buttonClass="gradient-1 btn-large"
           />
@@ -19,16 +19,25 @@
     </section>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
   export default {
     name: 'Registry',
     data: () => ({
       sheet: false,
+      textResgistration: null,
     }),
     computed: {
+      ...mapGetters([
+        'text_registration'
+      ]),
       ...mapState({
         giftList: state => state.giftList,
       })
     },
+    watch:{
+      text_registration(Promise){
+        Promise.then(text => { this.textResgistration = text })
+      }
+    }
   }
 </script>

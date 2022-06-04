@@ -67,5 +67,29 @@ export default {
     } catch (error) {
       console.log(error)
     }
+  },
+  async getLocations({ commit }){
+    try {
+      let response = await this.$axios('/locations')
+      commit("storeState",{
+        key: "locations",
+        value: response.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  },
+
+  async getSettings({ commit }){
+    try{
+        let response =  await this.$axios('/settings')
+        commit("storeState",{
+          key: "settings",
+          value: response.data
+        })
+      } catch (error) {
+        console.log(error)
+      }
   }
 }
+

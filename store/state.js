@@ -6,4 +6,6 @@ export default() => ({
   giftList:null,
   brideSquad: null,
   groomSquad: null,
+  locations: null,
+  settings: null
 })

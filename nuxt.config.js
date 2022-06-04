@@ -1,6 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+    // server: {
+    //   host: '192.168.0.199',
+    //   port: 3000// default: localhost
+    // },
     env: {
         imageURL: process.env.IMAGE_URL || 'http://lopezchavezwedding.website/storage/'
     },

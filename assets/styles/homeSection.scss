@@ -26,7 +26,7 @@
 }
 .title-1 {
   font-size: 2rem;
-  color: grey;
+  color: #0b3238;
   height: 30%;
   text-transform: uppercase;
   font-family: $font-2;
@@ -59,4 +59,17 @@
   font-family: $font-1;
   font-size: 1.8rem;
   padding: 0 0 20px 0;
+}
+
+@media (max-width: 767.98px) {
+  .title-1 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+  }
+  .title-2 {
+    font-size: 3.5rem;
+  }
+  .title-3 {
+    font-size: 1.8rem;
+  }
 }

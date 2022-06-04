@@ -1,0 +1,41 @@
+.registry{
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.title-registry{
+  padding: 3rem 0;
+}
+.p-registry{
+  max-width: 60%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: $font-4;
+  font-size: 1.4rem;
+  color: #356859;
+}
+.font-4{
+  font-family: $font-4;
+  color: darkslategrey;
+  font-size: 1.4rem;
+}
+.carousel-element{
+  margin: 0 .2rem;
+}
+.VueCarousel-slide{
+  display: flex !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 767.98px) {
+  .title-registry{
+    padding: 0;
+    font-size: 1.4rem;
+  }
+  .p-registry{
+    max-width: 90%;
+    margin-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}

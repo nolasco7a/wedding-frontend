@@ -10,3 +10,16 @@
         }
     }
 }
+.wrapper-app-bar{
+  height: 50px !important;
+  width: 100px !important;
+}
+
+@media (max-width: 767.98px) {
+  .wrapper-app-bar{
+    height: 40px !important;
+    width: 60px !important;
+    display: flex;
+    align-items: center;
+  }
+}

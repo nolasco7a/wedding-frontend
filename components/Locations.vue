@@ -19,18 +19,35 @@
     </v-tabs>
 
     <v-tabs-items v-model="tab">
+<!--      <v-tab-item-->
+<!--        v-for="item in items"-->
+<!--        :key="item.name"-->
+<!--      >-->
+<!--        <div id="map-wrap" style="height: 70vh">-->
+<!--          <no-ssr>-->
+<!--            <l-map :zoom="16" :center="item.positionMarker">-->
+<!--              <l-tile-layer-->
+<!--                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"-->
+<!--              ></l-tile-layer>-->
+<!--              <l-marker :lat-lng="item.positionMarker">-->
+<!--                <l-popup>{{item.textMarker}} <br><a :href="item.googleMap" target="_blanck">Abrir en google maps</a></l-popup>-->
+<!--              </l-marker>-->
+<!--            </l-map>-->
+<!--          </no-ssr>-->
+<!--        </div>-->
+<!--      </v-tab-item>-->
       <v-tab-item
-        v-for="item in items"
-        :key="item.name"
+        v-for="location in locations"
+        :key="location.title"
       >
         <div id="map-wrap" style="height: 70vh">
           <no-ssr>
-            <l-map :zoom="16" :center="item.positionMarker">
+            <l-map :zoom="16" :center="getLocations(location.la, location.long)">
               <l-tile-layer
                 url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
-              <l-marker :lat-lng="item.positionMarker">
-                <l-popup>{{item.textMarker}} <br><a :href="item.googleMap" target="_blanck">Abrir en google maps</a></l-popup>
+              <l-marker :lat-lng="getLocations(location.la, location.long)">
+                <l-popup>{{location.place}} <br><a :href="location.google_maps_link" target="_blanck">Abrir en google maps</a></l-popup>
               </l-marker>
             </l-map>
           </no-ssr>
@@ -40,6 +57,7 @@
   </v-card>
 </template>
 <script>
+import { mapState } from 'vuex';
   export default {
       name: 'Locations',
     data () {
@@ -53,14 +71,24 @@
             googleMap: 'https://goo.gl/maps/AJvjidPZN94TujdQ6'
           },
           {
-            name: 'Ceremonia Civil', 
+            name: 'Ceremonia Civil',
             positionMarker:[15.4843401382507, -88.04344793087607],
             textMarker: 'Salón Las Poinsettias Angelis Garden, Col. Altiplano, San Pedro Sula',
             googleMap: 'https://goo.gl/maps/tdyNsJiTks8MVEwR9'
           }
-          , 
+          ,
         ],
       }
+    },
+    methods: {
+      getLocations(lat, long) {
+        return( [parseFloat(lat), parseFloat(long)]);
+      },
+    },
+    computed: {
+      ...mapState({
+        locations: state => state.locations,
+      }),
     },
   }
 </script>
