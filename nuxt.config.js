@@ -10,7 +10,7 @@ export default {
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        titleTemplate: '%s - wedding',
+        titleTemplate: '%s - Lopez & Chavez',
         title: 'wedding',
         htmlAttrs: {
             lang: 'en'
@@ -22,7 +22,7 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon-wedding.png' },
             {rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'},
         ]
     },

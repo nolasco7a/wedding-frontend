@@ -1,12 +1,5 @@
-//Google Fonst
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=Mea+Culpa&family=Mulish:wght@200;400;600&family=Playball&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@400;700&family=Outfit:wght@200&display=swap');//Fonst variables
-$font-1: 'Mea Culpa';
-$font-2: 'Outfit', sans-serif;
-$font-3: 'Cormorant-Garamon', italic; //didot
-$font-4: 'Playball';
-$bg-color-1:#f7e9e8;
-$bg-color-2:#fafafa;
+//import variables
+@import '../variables.scss';
 //global styles
 @import 'global';
 @import 'buttons';
