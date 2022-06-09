@@ -90,6 +90,30 @@ export default {
       } catch (error) {
         console.log(error)
       }
+  },
+
+  async getSuggestedLocations({ commit }){
+    try{
+        let response =  await this.$axios('/location_lodging')
+        commit("storeState",{
+          key: "suggestedLocations",
+          value: response.data
+        })
+      } catch (error) {
+        console.log(error)
+      }
+  },
+
+  async getComments({ commit }){
+    try{
+        let response =  await this.$axios('/comments')
+        commit("storeState",{
+          key: "comments",
+          value: response.data
+        })
+      } catch (error) {
+        console.log(error)
+      }
   }
 }
 

@@ -1,16 +1,18 @@
 <template>
   <div>
     <Loader v-if="loader"/>
-    <SideNav />
+    <SideNav :items="routes"/>
     <Home id="home"/>
     <Invitation id="invitation"/>
     <Registry id="registry"/>
     <BrideSquad v-show="showBrideSquad==='1'"  id="bride-squad"/>
     <GroomSquad v-show="showGroomSquad==='1'" id="grooms-squad"/>
+    <Comments v-show="showComments === '1'"/>
     <Locations id="locations"/>
   </div>
 </template>
 <script>
+import Comments from '@/components/comments/Comments'
 import { mapGetters } from 'vuex';
 export default {
     data() {
@@ -18,6 +20,19 @@ export default {
           loader: true,
           showBrideSquad:null,
           showGroomSquad:null,
+          showComments:null,
+          routes: [
+            { title: "Home", hash: "/#home" },
+            { title: "Invitation", hash: "/#invitation" },
+            { title: "Detalles", hash: "/#details"},
+            { title: "Resgitro", hash: "/#registry" },
+            { title: "Bride Squad", hash: "/#bride-squad" },
+            { title: "Grooms Squad", hash: "/#grooms-squad" },
+            { title: "Locations", hash: "/#locations" },
+            { title: "Hospedaje", hash: "/lodging" },
+            { title: "Beauty & Makeup", hash: "/beauty" },
+            { title: "Comentarios", hash: "/comments_wall" },
+          ],
         };
     },
     beforeMount() {
@@ -33,6 +48,7 @@ export default {
       ...mapGetters([
         'show_bride_squad',
         'show_groom_squad',
+        'show_comments'
       ]),
     },
     mounted() {
@@ -41,7 +57,7 @@ export default {
             setTimeout(() => {
                 this.loader = false;
                 this.$nuxt.$loading.finish();
-            }, 3000);
+            }, 1000);
         });
         //init scroll 0
         window.scrollTo(0, 0);
@@ -53,6 +69,9 @@ export default {
     show_groom_squad(Promise){
       Promise.then(show => { this.showGroomSquad = show })
     },
+    show_comments(Promise){
+      Promise.then(show => { this.showComments = show })
+    }
   }
 
 };

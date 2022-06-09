@@ -4,13 +4,13 @@
         <v-row justify="center">
           <div class="carousel-wrapper">
             <client-only>
-              <carousel style="margin-bottom: 15px" :paginationEnabled="false" :autoplay="true" :autoplayHoverPause="true" :perPageCustom="[[0, 1],[576, 1], [768, 1], [1024, 2], [1300, 3]]">
+              <carousel style="margin-bottom: 15px" :autoplay="true" :autoplayHoverPause="true" :perPageCustom="[[0, 1],[576, 1], [768, 1], [900, 2], [1024, 3], [1300, 4]]">
                 <slide>
                   <CardSquad v-if="frontBrideSquad" :overlay="false" classCard="card-squad"  :imageCard="frontBrideSquad"/>
                 </slide>
 
                 <slide v-for="(item, index) in bride_squad" :key="index">
-                  <CardSquad :overlay="true" classCard="groom-squad" :name="item.name" :imageCard="item.image"/>
+                  <CardSquad :overlay="true" classCard="bride-squad" :name="item.name" :description="item.description" :imageCard="item.image"/>
                 </slide>
               </carousel>
             </client-only>

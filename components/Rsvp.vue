@@ -17,6 +17,7 @@
       <v-sheet class="text-center" height="600px" style="overflow-y: scroll">
         <div class="my-3 container-form" style="padding: 2rem 3rem">
           <h3 class="title-wedding">Registrate para nuestra boda!</h3>
+          <p class="my-3" style="text-align: left; font-size:.8rem">{{ textInvitation }}</p>
           <validation-observer ref="observer" v-slot="{ invalid }">
             <form @submit.prevent="submit">
               <v-row>
@@ -73,6 +74,43 @@
                   required
                 ></v-text-field>
               </validation-provider>
+
+              <validation-provider
+                v-slot="{ errors }"
+                name="song"
+                rules=""
+              >
+                <v-text-field
+                  v-model="song"
+                  :error-messages="errors"
+                  label="¿Qué canción le gustaría escuchar en nuestra boda?"
+                ></v-text-field>
+              </validation-provider>
+
+              <validation-provider
+                v-slot="{ errors }"
+                name="allergies"
+                rules=""
+              >
+                <v-text-field
+                  v-model="allergies"
+                  :error-messages="errors"
+                  label="¿Es alérgico a algo?"
+                ></v-text-field>
+              </validation-provider>
+
+              <validation-provider
+                v-slot="{ errors }"
+                name="otherEvent"
+                rules=""
+              >
+                <v-text-field
+                  v-model="otherEvent"
+                  :error-messages="errors"
+                  label="¿Celebra algo especial el día del evento?"
+                ></v-text-field>
+              </validation-provider>
+
               <div v-if="selectedGifts.length > 0">
                 <h4 class="title-wedding-2">Mis regalos para los novios!</h4>
                 <v-chip-group>
@@ -88,12 +126,12 @@
                 </v-chip-group>
               </div>
                 <v-checkbox
-                  v-if="giftList.length > 0"
+                  v-if="giftList.length > 0 && renderGifts===1"
                   v-model="show_gifts"
                   label="Me gustaria ver los apartados de regalos"
                 ></v-checkbox>
 
-              <div v-if="show_gifts">
+              <div v-if="show_gifts && renderGifts===1">
                 <div class="carousel-wrapper">
                   <client-only>
                     <carousel v-if="giftList" style="margin-bottom: 15px"
@@ -160,7 +198,7 @@
 </template>
 <script>
 import SnackbarError from "@/components/snackbars/SnackbarError.vue";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { required, email, numeric, min, } from "vee-validate/dist/rules";
 import { extend, ValidationObserver, ValidationProvider, setInteractionMode, } from "vee-validate";
 setInteractionMode("eager");
@@ -201,6 +239,14 @@ export default {
       type: String,
       default: "",
     },
+    renderGifts: {
+      type: Boolean,
+      default: false,
+    },
+    textInvitation:{
+      type: String,
+      default: "",
+    }
   },
   data: () => ({
     sheet: false,
@@ -215,7 +261,10 @@ export default {
     snackbarVerify: false,
     selectedGifts: [],
     alert: "",
-    snackbar:''
+    snackbar:'',
+    song:'',
+    allergies:'',
+    otherEvent: '',
   }),
   methods: {
     removeGift(gift) {
@@ -243,6 +292,9 @@ export default {
         email: this.email,
         status: this.status,
         selected_gifts: this.selectedGifts,
+        song: this.song,
+        allergies: this.allergies,
+        other_event: this.otherEvent,
       };
       try{
         await this.$axios.post("/create_guest", data)

@@ -11,31 +11,14 @@
       grow
     >
       <v-tab
-        v-for="item in items"
-        :key="item.name"
+        v-for="location in locations"
+        :key="location.id"
       >
-        {{ item.name }}
+        {{ location.title }}
       </v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
-<!--      <v-tab-item-->
-<!--        v-for="item in items"-->
-<!--        :key="item.name"-->
-<!--      >-->
-<!--        <div id="map-wrap" style="height: 70vh">-->
-<!--          <no-ssr>-->
-<!--            <l-map :zoom="16" :center="item.positionMarker">-->
-<!--              <l-tile-layer-->
-<!--                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"-->
-<!--              ></l-tile-layer>-->
-<!--              <l-marker :lat-lng="item.positionMarker">-->
-<!--                <l-popup>{{item.textMarker}} <br><a :href="item.googleMap" target="_blanck">Abrir en google maps</a></l-popup>-->
-<!--              </l-marker>-->
-<!--            </l-map>-->
-<!--          </no-ssr>-->
-<!--        </div>-->
-<!--      </v-tab-item>-->
       <v-tab-item
         v-for="location in locations"
         :key="location.title"

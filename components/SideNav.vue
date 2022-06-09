@@ -24,15 +24,12 @@ export default {
   name: "SideNav",
   data: () => ({
     collapseOnScroll: false,
-    items: [
-      { title: "Home", hash: "#home" },
-      { title: "Invitation", hash: "#invitation" },
-      { title: "Detalles", hash: "#details"},
-      { title: "Resgitro", hash: "#registry" },
-      { title: "Bride Squad", hash: "#bride-squad" },
-      { title: "Grooms Squad", hash: "#grooms-squad" },
-      { title: "Locations", hash: "#locations" },
-    ],
   }),
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>

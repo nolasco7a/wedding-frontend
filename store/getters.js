@@ -65,6 +65,46 @@ export default{
   //show groom squad
   async show_groom_squad(state){
     return await extractSetting(state.settings, 'site.show_groom_squad');
+  },
+  //show gifts
+  async render_gifts(state){
+    return await extractSetting(state.settings, 'site.show_gifts');
+  },
+  //message invitation
+  async message_invitation(state){
+    return await extractSetting(state.settings, 'site.message_invitation');
+  },
+  //background lodging
+  async background_lodging(state){
+    return await extractSetting(state.settings, 'site.background_lodging')
+  },
+  //message lodging
+  async message_lodging(state){
+    return await extractSetting(state.settings, 'site.message_lodging')
+  },
+  //background beauty
+  async background_beauty(state){
+    return await extractSetting(state.settings, 'site.background_beauty')
+  },
+  //message beauty
+  async message_beauty(state){
+    return await extractSetting(state.settings, 'site.message_beauty')
+  },
+  //get locations lodgings
+  async lodgings(state){
+    return await state.suggestedLocations.filter(location => location.type == 1 )
+  },
+  //get locations beauties
+  async beauties(state){
+    return await state.suggestedLocations.filter(location => location.type == 2 || location.type === 3 )
+  },
+  //show comments
+  async show_comments(state){
+    return await extractSetting(state.settings, 'site.show_comments')
+  },
+  //message comments
+  async comments_message(state){
+    return await extractSetting(state.settings, 'site.comments_message')
   }
 }
 

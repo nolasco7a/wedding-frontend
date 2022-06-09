@@ -13,7 +13,7 @@ export default {
         titleTemplate: '%s - Lopez & Chavez',
         title: 'wedding',
         htmlAttrs: {
-            lang: 'en'
+            lang: 'es'
         },
         meta: [
             { charset: 'utf-8' },

@@ -10,7 +10,9 @@
                 <Rsvp
                     textButton="RSVP"
                     :rounded="true"
-                    buttonClass="gradient-1 btn-1"
+                    buttonClass="gradient-1 btn-large"
+                    :textInvitation="textInvitation"
+                    :renderGifts="showGifts"
                 />
             </div>
         </div>
@@ -27,6 +29,8 @@ export default ({
           gSingleName:null,
           bSingleName:null,
           eventDay:null,
+          showGifts: null,
+          textInvitation: null,
         }
     },
     components: {
@@ -45,6 +49,8 @@ export default ({
         'gsingle_name',
         'bsingle_name',
         'event_day',
+        "render_gifts",
+        "message_invitation"
       ]),
       ...mapState({
         home_data: state => state.homeData,
@@ -63,6 +69,12 @@ export default ({
     },
     event_day(Promise){
       Promise.then(day => { this.eventDay = day })
+    },
+    render_gifts(Response){
+      Response.then(show => this.showGifts = show)
+    },
+    message_invitation(Response){
+      Response.then(message => this.textInvitation = message)
     }
   }
 })

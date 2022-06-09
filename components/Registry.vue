@@ -10,6 +10,8 @@
             textButton="RSVP"
             :rounded="true"
             buttonClass="gradient-1 btn-large"
+            :textInvitation="textInvitation"
+            :renderGifts="showGifts"
           />
         </v-col>
       </v-row>
@@ -25,10 +27,14 @@ import { mapState, mapGetters } from 'vuex'
     data: () => ({
       sheet: false,
       textResgistration: null,
+      showGifts: null,
+      textInvitation: null,
     }),
     computed: {
       ...mapGetters([
-        'text_registration'
+        'text_registration',
+        "render_gifts",
+        "message_invitation"
       ]),
       ...mapState({
         giftList: state => state.giftList,
@@ -37,6 +43,12 @@ import { mapState, mapGetters } from 'vuex'
     watch:{
       text_registration(Promise){
         Promise.then(text => { this.textResgistration = text })
+      },
+      render_gifts(Response){
+        Response.then(show => this.showGifts = show)
+      },
+      message_invitation(Response){
+        Response.then(message => this.textInvitation = message)
       }
     }
   }

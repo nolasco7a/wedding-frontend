@@ -50,14 +50,18 @@
 }
 
 .font-1 {
-    font-family: $font-1;
+    font-family: $font-1 !important;
 }
 .font-2{
-    font-family: $font-2;
+    font-family: $font-2 !important;
 }
 .font-3{
-    font-family: $font-3;
+    font-family: $font-3 !important;
 }
 .font-4{
-    font-family: $font-4;
+    font-family: $font-4 !important;
+}
+
+.my-2{
+    margin: 2rem 0
 }

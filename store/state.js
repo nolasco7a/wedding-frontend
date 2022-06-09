@@ -7,5 +7,7 @@ export default() => ({
   brideSquad: null,
   groomSquad: null,
   locations: null,
-  settings: null
+  settings: null,
+  suggestedLocations:null,
+  comments: null,
 })

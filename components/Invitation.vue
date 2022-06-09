@@ -29,7 +29,7 @@
         </div>
         <div class="part-2" id="detils">
           <v-row>
-            <v-col cols="12" lg="6" md="6" sm="12" justify="center" align="center">
+            <v-col cols="12" lg="6" md="6" sm="4" justify="center" align="center">
               <div class="anounce">
                 <p>THE</p>
                 <p>WEDDING</p>
@@ -37,7 +37,7 @@
               </div>
               <div class="anounce-2">THE WEDDING DAY</div>
             </v-col>
-            <v-col cols="12" lg="6" md="6" sm="12" class="wedding-info">
+            <v-col cols="12" lg="6" md="6" sm="8" class="wedding-info">
               <div v-for="(location, index) in locations" :key="index">
                 <h4 class="title-invitation-2" >{{ location.title }}</h4>
                 <p>Fecha: {{location.day}}</p>

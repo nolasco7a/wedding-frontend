@@ -3,6 +3,7 @@
         <img :src="correctUrl(imageCard)" alt="">
         <div v-if="overlay" class="overlay-card">
             <h1>{{ name }}</h1>
+            <p>{{ description }}</p>
         </div>
     </div>
 </template>
@@ -15,6 +16,10 @@
                 default: true
             },
             name: {
+                type: String,
+                default: ""
+            },
+            description:{
                 type: String,
                 default: ""
             },
