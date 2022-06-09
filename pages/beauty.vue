@@ -4,7 +4,7 @@
     <SideNav :items="routes"/>
     <BeautyHome/>
     <BeautyBody :locations="locations" :message="message"/>
-    <MapLocation :locations="locations"/>
+    <MapLocation :locations="locations" title="Beauty & Makeup Sugeridos"/>
   </div>
 </template>
 <script>

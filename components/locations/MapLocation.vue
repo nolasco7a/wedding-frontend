@@ -11,7 +11,7 @@
       grow
     >
       <v-tab>
-          Hoteles Sugeridos
+          {{ title }}
       </v-tab>
     </v-tabs>
 
@@ -41,6 +41,10 @@
         type: Array,
         required: true
       },
+      title:{
+        type: String,
+        default: ''
+      }
     },
     methods:{
       getCurrentLatLong(lat_long){

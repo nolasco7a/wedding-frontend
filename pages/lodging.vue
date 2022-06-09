@@ -4,7 +4,7 @@
     <SideNav :items="routes"/>
     <LodgingHome/>
     <BodyLodging :locations="locations" :message="messageLodging"/>
-    <MapLocation :locations="locations"/>
+    <MapLocation :locations="locations" title="hospedajes sugeridos"/>
   </div>
 </template>
 <script>

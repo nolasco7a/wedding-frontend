@@ -36,6 +36,7 @@
 .title-2 {
   font-size: 5rem;
   color: currentColor;
+  filter: invert(1);
   height: 30%;
   font-family: $font-1;
   font-weight: 500;
@@ -43,7 +44,7 @@
 }
 .title-3 {
   font-size: 2rem;
-  color: grey !important;
+  color: whitesmoke !important;
   height: 30%;
   font-family: $font-3;
   color: #f7e9e8;
