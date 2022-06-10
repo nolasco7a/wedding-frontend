@@ -3,6 +3,9 @@
        <h1 class="font-4 title-bride-squad">{{ title }}</h1>
           <div class="carousel-wrapper">
             <Hooper ref="carousel" :settings="hooperSettings" style="min-height: 450px;">
+              <slide style="display:flex; justify-content:center">
+                  <CardSquad v-if="frontBrideSquad" :overlay="false" classCard="card-squad"  :imageCard="frontBrideSquad"/>
+              </slide>
               <slide v-for="(item, index) in bride_squad" :key="index" style="display:flex; justify-content:center" >
                 <CardSquad :overlay="true" classCard="bride-squad" :name="item.name" :description="item.description" :imageCard="item.image" />
               </slide>

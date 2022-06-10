@@ -4,7 +4,7 @@
 
           <div class="carousel-wrapper">
             <Hooper ref="carousel" :settings="hooperSettings" style="min-height: 450px;">
-                <slide>
+                <slide style="display:flex; justify-content:center">
                   <CardSquad v-if="frontGroomSquad" :overlay="false" classCard="card-squad"  :imageCard="frontGroomSquad"/>
                 </slide>
 
