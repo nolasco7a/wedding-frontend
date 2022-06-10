@@ -20,7 +20,7 @@ export default {
     },
     data(){
         return{
-            background: '/default-images/beauty-default.jpg',
+            background: '/default-images/default-beauty.jpg',
         }
     },
     props:{

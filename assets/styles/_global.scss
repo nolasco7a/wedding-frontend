@@ -65,3 +65,13 @@
 .my-2{
     margin: 2rem 0
 }
+.v-application ul, .v-application ol {
+   padding: 0 !important;
+}
+.hooper-indicator{
+    background-color: #90a4ae;
+}
+
+.hooper-indicator:hover, .hooper-indicator.is-active {
+    background-color: #68525b;
+}

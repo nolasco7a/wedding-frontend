@@ -1,32 +1,53 @@
 <template>
     <div class="section-squad">
         <h1 class="font-3 title-groom-squad">{{title}}</h1>
-        <v-row justify="center">
+
           <div class="carousel-wrapper">
-            <client-only>
-              <carousel style="margin-bottom: 15px" :autoplay="true" :autoplayHoverPause="true" :perPageCustom="[[0, 1],[576, 1], [768, 1], [900, 2], [1024, 3], [1300, 4]]">
+            <Hooper ref="carousel" :settings="hooperSettings" style="min-height: 450px;">
                 <slide>
                   <CardSquad v-if="frontGroomSquad" :overlay="false" classCard="card-squad"  :imageCard="frontGroomSquad"/>
                 </slide>
 
-                <slide v-for="(item, index) in groom_squad" :key="index">
+                <slide v-for="(item, index) in groom_squad" :key="index" style="display:flex; justify-content:center">
                   <CardSquad :overlay="true" classCard="groom-squad" :name="item.name" :description="item.description" :imageCard="item.image"/>
                 </slide>
-              </carousel>
-            </client-only>
+               <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            </Hooper>
           </div>
-        </v-row>
+    
     </div>
 </template>
 <script>
+import { Slide, Hooper, Pagination as HooperPagination } from 'hooper'
 import CardSquad from '@/components/CardSquad'
 import { mapState, mapGetters } from 'vuex'
 export default{
-    components: { CardSquad },
+    components: { CardSquad, Slide, Hooper, HooperPagination},
   data() {
     return {
       title: null,
       frontGroomSquad: null,
+      hooperSettings: {
+        itemsToShow: 1,
+        breakpoints: {
+            0: {
+              itemsToShow: 1,
+            },
+            600: {
+              itemsToShow: 2,
+            },
+            992: {
+              itemsToShow: 3,
+            },
+            1200: {
+              itemsToShow: 3,
+            },
+            1400: {
+              itemsToShow: 4,
+            },
+            
+          }
+        }
     }
   },
   methods: {
@@ -34,7 +55,11 @@ export default{
       if (url) {
         return `${process.env.imageURL}${url}`
       }
-    }
+    },
+     restartcarousel(){
+        this.$refs.carousel.restart()
+        
+      },
   },
     computed: {
       ...mapGetters([
@@ -45,6 +70,11 @@ export default{
       groom_squad: state => state.groomSquad,
     })
   },
+  mounted(){
+      setTimeout(() => {
+        this.restartcarousel()
+      }, 500)
+    },
   watch:{
     title_groom_squad(Promise){
       Promise.then(title => { this.title = title })
