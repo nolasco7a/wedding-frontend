@@ -2,7 +2,7 @@
     <section class="home" v-if="background">
         <img :src="correctUrl(background)" class="bg-image" alt="">
         <div class="home-text">
-            <div class="title-1">RESERVA TU DIA</div>
+            <div class="title-1">RESERVA TU DÍA</div>
             <div class="title-2">{{bSingleName}}  y {{gSingleName}}</div>
             <div class="title-3">
                 {{ eventDay }}

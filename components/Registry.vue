@@ -3,7 +3,7 @@
         <!-- busca tu numero o correo electronico para confirmar tu invitacion via correo electronico -->
       <v-row>
         <v-col cols="lg-12" align="center">
-          <div class="title-1 title-registry">registrate</div>
+          <div class="title-1 title-registry">regístrate</div>
           <p class="p-registry">{{textResgistration}}</p>
           <!-- modal -->
           <Rsvp

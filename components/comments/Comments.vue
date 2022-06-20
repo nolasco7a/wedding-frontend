@@ -2,13 +2,13 @@
     <div class="comments">
         <v-row justify="center">
             <v-col cols="10">
-                <h1 class="title-1 mb-4" style="height: auto !important">Dejanos tus comentarios</h1>
+                <h1 class="title-1 mb-4" style="height: auto !important">Déjanos tus comentarios</h1>
                 <p>{{ message }}</p>
             </v-col>
             <v-col cols="10">
                 <v-switch
                 v-model="switchA"
-                :label="`Anonimo`"
+                :label="`Anónimo`"
                 ></v-switch>
             </v-col>
         </v-row>
@@ -154,7 +154,7 @@ extend("min", {
             switchA(val){
               if(val){
                 this.oldName = this.name
-                this.name = 'Anonimo'
+                this.name = 'Anónimo'
               }else{
                 this.name = this.oldName
               }

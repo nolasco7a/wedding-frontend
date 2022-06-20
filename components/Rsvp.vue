@@ -16,7 +16,7 @@
     <v-bottom-sheet v-model="sheet" inset>
       <v-sheet class="text-center" height="600px" style="overflow-y: scroll">
         <div class="my-3 container-form" style="padding: 2rem 3rem">
-          <h3 class="title-wedding">Registrate para nuestra boda!</h3>
+          <h3 class="title-wedding">Regístrate a nuestra boda</h3>
           <p class="my-3" style="text-align: left; font-size:.8rem">{{ textInvitation }}</p>
           <validation-observer ref="observer" v-slot="{ invalid }">
             <form @submit.prevent="submit">

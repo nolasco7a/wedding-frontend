@@ -24,7 +24,7 @@ export default {
           routes: [
             { title: "Home", hash: "/#home" },
             { title: "Invitación", hash: "/#invitation" },
-            { title: "Resgitro", hash: "/#registry" },
+            { title: "Registro", hash: "/#registry" },
             { title: "Bride Squad", hash: "/#bride-squad" },
             { title: "Grooms Squad", hash: "/#grooms-squad" },
             { title: "Ubicaciones", hash: "/#locations" },
